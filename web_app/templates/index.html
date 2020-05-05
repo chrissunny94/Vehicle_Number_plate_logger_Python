@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+.header {
+    text-align: center;
+    padding: 32px;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.column img {
+    margin-top: 12px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+<head>
+  <title>Vehicle Number Plate Logger</title>
+</head>
+
+
+
+<body>
+<link rel="stylesheet" type="text/css" href="file.css">
+	
+
+
+   <div class="row">
+  		<div id="recorder" class="column">
+  			<h1>Detected Vehicle</h1>
+  
+    		<button id="record">Record</button>
+    		<button id="stop">Stop</button>
+    		<a id="download"></a>
+    		<script type="text/javascript" src="{{ url_for('static', filename='recorder.js') }}"></script>      
+  
+  			<img id="video" src="{{ url_for('video_viewer') }}" alt="Cinque Terre" style="width: 75%; height: 75%">
+  		</div>
+  
+ 		<div id="detected" class="column">
+  			<h1>Last detected vehicle</h1>
+  
+    		
+  			<img id="processed_video" src="{{ url_for('processed_video') }}" alt="Cinque Terre"  style="width: 50%; height: 50%">
+  		</div>
+  
+  
+
+	</div> 
+
+<h2>List of cars </h2>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+ 
+</table>	
+</body>
+</html>
